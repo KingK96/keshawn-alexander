@@ -7,18 +7,18 @@ export const projects = [
     highlights: ["STEM + career readiness", "Community partnerships", "Programs built for impact"],
     links: [
       { label: "Visit site", href: "https://therosawfoundation.org" },
-      { label: "Partner", href: "#contact" },
+      { label: "Partner", href: "https://therosawfoundation.org/contactus" },
     ],
   },
   {
     title: "SkySpot",
-    tag: "Product • Travel • Real-time planning",
+    tag: "Product • Travel • AI",
     description:
       "A travel planning experience that helps people decide exactly when to leave for the airport using real-time conditions and predictive timing.",
     highlights: ["Built & shipping", "Designed for confidence", "Reduces travel uncertainty"],
     links: [
       { label: "Visit site", href: "https://skyspotapp.com" },
-      { label: "Try / Beta", href: "#contact" },
+      { label: "Try Beta", href: "https://docs.google.com/forms/d/e/1FAIpQLSfdwhGOZiYV4ft7r_DK4Pr59LLvzBsFRJNAVV_Geyi6YXYIig/viewform" },
     ],
   },
   {

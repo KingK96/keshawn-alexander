@@ -1,4 +1,4 @@
-import "./styles.css";
+import "./style.css";
 import { projects } from "./projects.js";
 import { renderProjects } from "./renderProjects.js";
 import { setupThemeToggle } from "./theme.js";
@@ -144,7 +144,6 @@ app.innerHTML = `
 
         <footer class="footer">
           <span>© <span id="year"></span> Ke'Shawn Alexander</span>
-          <span class="muted">Built on GitHub Pages</span>
         </footer>
       </div>
     </section>
