@@ -5,6 +5,7 @@ export const projects = [
     description:
       "Building STEM education and career pathways for students through community-powered programming and real opportunity access.",
     highlights: ["STEM + career readiness", "Community partnerships", "Programs built for impact"],
+    metric: "200+ students and parents served",
     links: [
       { label: "Visit site", href: "https://therosawfoundation.org" },
       { label: "Partner", href: "https://therosawfoundation.org/contactus" },
@@ -16,6 +17,7 @@ export const projects = [
     description:
       "A travel planning experience that helps people decide exactly when to leave for the airport using real-time conditions and predictive timing.",
     highlights: ["Built & shipping", "Designed for confidence", "Reduces travel uncertainty"],
+    metric: "25+ beta users",
     links: [
       { label: "Visit site", href: "https://skyspotapp.com" },
       { label: "Try Beta", href: "https://docs.google.com/forms/d/e/1FAIpQLSfdwhGOZiYV4ft7r_DK4Pr59LLvzBsFRJNAVV_Geyi6YXYIig/viewform" },
@@ -27,6 +29,7 @@ export const projects = [
     description:
       "A platform to create deeply personal, interactive surprises in minutes—designed to make meaningful moments effortless.",
     highlights: ["Emotion-forward UX", "Fast creation flow", "Designed to feel special"],
+    metric: "Coming soon",
     links: [{ label: "Coming soon", href: "#contact" }],
     disabled: true,
   },
