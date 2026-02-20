@@ -194,6 +194,40 @@ app.innerHTML = `
   </main>
 `;
 
+// Add enter overlay (does NOT remove/hide the site)
+app.insertAdjacentHTML(
+  "afterbegin",
+  `
+  <div id="enter" class="enter">
+    <div class="enter__card">
+      <div class="enter__mark"></div>
+      <div class="enter__name">Ke'Shawn Alexander</div>
+      <div class="enter__tag">Founder • Product Leader • Technologist</div>
+      <button class="btn btn--solid enter__btn" id="enterBtn" type="button">Enter</button>
+      <button class="enter__link" id="skipBtn" type="button">Skip</button>
+    </div>
+  </div>
+`
+);
+
+// Enter logic
+const enter = document.getElementById("enter");
+const enterBtn = document.getElementById("enterBtn");
+const skipBtn = document.getElementById("skipBtn");
+
+function closeEnter() {
+  enter?.classList.add("enter--hide");
+  setTimeout(() => enter?.remove(), 250);
+  localStorage.setItem("keshawn_entered", "1");
+}
+
+if (localStorage.getItem("keshawn_entered") === "1") {
+  enter?.remove(); // returning visitor
+} else {
+  enterBtn?.addEventListener("click", closeEnter);
+  skipBtn?.addEventListener("click", closeEnter);
+}
+
 document.querySelector("#year").textContent = String(new Date().getFullYear());
 
 
@@ -227,9 +261,7 @@ document.querySelector("#workGrid").innerHTML = projects
 
 setupNav({ hamburgerId: "hamburger", mobileNavId: "mobileNav" });
 
-const enter = document.getElementById("enter");
 const site = document.getElementById("site");
-const enterBtn = document.getElementById("enterBtn");
 const skipLink = document.getElementById("skipLink");
 
 function openSite() {

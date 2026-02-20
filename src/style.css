@@ -324,9 +324,7 @@ h1 {
   .hamburger { display: inline-flex; }
 }
 
-.no-scroll { overflow: hidden; }
 
-.site--hidden { display: none; }
 
 .enter {
   position: fixed;
@@ -375,10 +373,14 @@ h1 {
 }
 
 .enter__link {
-  display: inline-block;
   margin-top: 12px;
   font-weight: 900;
   color: var(--muted);
+  background: transparent;
+  border: none;
+  padding: 0;
+  text-align: left;
+  cursor: pointer;
 }
 
 .enter__link:hover { color: var(--text); }
