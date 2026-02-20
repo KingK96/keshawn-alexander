@@ -390,3 +390,5 @@ h1 {
   pointer-events: none;
   transition: opacity 240ms ease;
 }
+
+.site--hidden { display: none; }

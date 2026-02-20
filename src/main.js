@@ -10,15 +10,8 @@ const RESUME_PATH = "./KeShawn_Alexander_Resume.pdf";
 const app = document.querySelector("#app");
 
 app.innerHTML = `
-<div id="enter" class="enter">
-    <div class="enter__card">
-      <div class="enter__name">Ke'Shawn Alexander</div>
-      <div class="enter__tag">Founder • Product Leader • Technologist</div>
-      <button class="btn btn--solid enter__btn" id="enterBtn" type="button">Enter</button>
-    </div>
-  </div>
 
-  <div id="site" class="site site--hidden">
+  <div id="site" class="site">
 
   <header class="header">
     <div class="container header__inner">
@@ -195,6 +188,7 @@ app.innerHTML = `
 `;
 
 // Add enter overlay (does NOT remove/hide the site)
+// ENTER OVERLAY (does not hide the site)
 app.insertAdjacentHTML(
   "afterbegin",
   `
@@ -210,23 +204,23 @@ app.insertAdjacentHTML(
 `
 );
 
-// Enter logic
 const enter = document.getElementById("enter");
 const enterBtn = document.getElementById("enterBtn");
 const skipBtn = document.getElementById("skipBtn");
 
 function closeEnter() {
   enter?.classList.add("enter--hide");
-  setTimeout(() => enter?.remove(), 250);
+  window.setTimeout(() => enter?.remove(), 240);
   localStorage.setItem("keshawn_entered", "1");
 }
 
 if (localStorage.getItem("keshawn_entered") === "1") {
-  enter?.remove(); // returning visitor
+  enter?.remove();
 } else {
   enterBtn?.addEventListener("click", closeEnter);
   skipBtn?.addEventListener("click", closeEnter);
 }
+
 
 document.querySelector("#year").textContent = String(new Date().getFullYear());
 
@@ -261,25 +255,6 @@ document.querySelector("#workGrid").innerHTML = projects
 
 setupNav({ hamburgerId: "hamburger", mobileNavId: "mobileNav" });
 
-const site = document.getElementById("site");
-const skipLink = document.getElementById("skipLink");
-
-function openSite() {
-  enter?.classList.add("enter--hide");
-  site?.classList.remove("site--hidden");
-  document.body.classList.remove("no-scroll");
-  localStorage.setItem("keshawn_entered", "1");
-}
-
-if (localStorage.getItem("keshawn_entered") === "1") {
-  // Returning visitor: skip enter screen
-  enter?.remove();
-  site?.classList.remove("site--hidden");
-} else {
-  document.body.classList.add("no-scroll");
-  enterBtn?.addEventListener("click", openSite);
-  skipLink?.addEventListener("click", openSite);
-}
 
 // Email draft
 document.querySelector("#quickForm").addEventListener("submit", (e) => {
