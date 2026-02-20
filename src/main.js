@@ -5,7 +5,7 @@ import { setupNav } from "./ui.js";
 const LINKEDIN_URL = "https://www.linkedin.com/in/ke-shawn-alexander/";
 const GITHUB_URL = "https://github.com/KingK96";
 const EMAIL = "akeshawn@yahoo.com";
-const RESUME_PATH = "./KeShawn_Alexander_Resume.pdf";
+const RESUME_PATH = `${import.meta.env.BASE_URL}KeShawn_Alexander_Resume.pdf`;
 
 const app = document.querySelector("#app");
 
@@ -185,6 +185,7 @@ app.innerHTML = `
       </div>
     </section>
   </main>
+  </div>
 `;
 
 // Add enter overlay (does NOT remove/hide the site)
@@ -219,6 +220,11 @@ if (localStorage.getItem("keshawn_entered") === "1") {
 } else {
   enterBtn?.addEventListener("click", closeEnter);
   skipBtn?.addEventListener("click", closeEnter);
+}
+
+function closeEnter() {
+  console.log("Enter clicked");
+  document.getElementById("enter")?.remove();
 }
 
 

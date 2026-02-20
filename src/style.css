@@ -330,7 +330,7 @@ h1 {
   position: fixed;
   inset: 0;
   background: #fff;
-  z-index: 999;
+  z-index: 9999;
   display: grid;
   place-items: center;
   padding: 22px;
