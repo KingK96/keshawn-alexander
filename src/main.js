@@ -219,12 +219,7 @@ if (localStorage.getItem("keshawn_entered") === "1") {
 } else {
   enterBtn?.addEventListener("click", closeEnter);
   skipBtn?.addEventListener("click", closeEnter);
-}
-
-function closeEnter() {
-  console.log("Enter clicked");
-  document.getElementById("enter")?.remove();
-}
+}ß
 
 
 document.querySelector("#year").textContent = String(new Date().getFullYear());
