@@ -2,12 +2,15 @@ export function setupNav({ hamburgerId, mobileNavId }) {
   const hamburger = document.getElementById(hamburgerId);
   const mobileNav = document.getElementById(mobileNavId);
 
-  const close = () => mobileNav?.classList.remove("mobileNav--open");
-  const toggle = () => mobileNav?.classList.toggle("mobileNav--open");
+  hamburger?.addEventListener("click", () => {
+    mobileNav?.classList.toggle("mobileNav--open");
+  });
 
-  hamburger?.addEventListener("click", toggle);
-  mobileNav?.querySelectorAll("a").forEach((a) => a.addEventListener("click", close));
-
+  mobileNav?.querySelectorAll("a").forEach((a) =>
+    a.addEventListener("click", () => mobileNav?.classList.remove("mobileNav--open"))
+  );
+}
+  
   // Smooth scrolling for in-page anchors
   document.querySelectorAll('a[href^="#"]').forEach((a) => {
     a.addEventListener("click", (e) => {
@@ -20,4 +23,4 @@ export function setupNav({ hamburgerId, mobileNavId }) {
       history.replaceState(null, "", href);
     });
   });
-}
+
