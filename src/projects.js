@@ -39,6 +39,7 @@ export const projects = [
     description:
       "A blockchain-based registry that helps athletes register and verify NIL rights—built for transparency and trust between athletes and brands.",
     highlights: ["Verifiable records", "Ecosystem trust", "Built with smart contracts"],
+    metric: "Testing",
     links: [
       { label: "View on GitHub", href: "https://github.com/KingK96" },
       { label: "Request demo", href: "#contact" },
