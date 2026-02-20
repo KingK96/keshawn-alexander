@@ -1,6 +1,7 @@
 export const projects = [
   {
     title: "R.O.S.A",
+    subtitle: "STEM, Financial Literacy and Entrepreneurship",
     tag: "Nonprofit • STEM • Youth pathways",
     description:
       "Building STEM education and career pathways for students through community-powered programming and real opportunity access.",
@@ -13,6 +14,7 @@ export const projects = [
   },
   {
     title: "SkySpot",
+    subtitle: "Travel made easy",
     tag: "Product • Travel • AI",
     description:
       "A travel planning experience that helps people decide exactly when to leave for the airport using real-time conditions and predictive timing.",
@@ -25,6 +27,7 @@ export const projects = [
   },
   {
     title: "The Unveil",
+    subtitle: "Creating personalized moments for every occasion",
     tag: "Product • Moments • Personalization",
     description:
       "A platform to create deeply personal, interactive surprises in minutes—designed to make meaningful moments effortless.",
@@ -35,6 +38,7 @@ export const projects = [
   },
   {
     title: "NIL Registry",
+    subtitle: "The future of NIL",
     tag: "Blockchain • Identity • Verification",
     description:
       "A blockchain-based registry that helps athletes register and verify NIL rights—built for transparency and trust between athletes and brands.",

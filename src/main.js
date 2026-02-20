@@ -10,11 +10,20 @@ const RESUME_PATH = "./KeShawn_Alexander_Resume.pdf";
 const app = document.querySelector("#app");
 
 app.innerHTML = `
+<div id="enter" class="enter">
+    <div class="enter__card">
+      <div class="enter__name">Ke'Shawn Alexander</div>
+      <div class="enter__tag">Founder • Product Leader • Technologist</div>
+      <button class="btn btn--solid enter__btn" id="enterBtn" type="button">Enter</button>
+    </div>
+  </div>
+
+  <div id="site" class="site site--hidden">
+
   <header class="header">
     <div class="container header__inner">
       <a class="logo" href="#top" aria-label="Home">
-        <span class="logo__mark"></span>
-        <span class="logo__text">Ke'Shawn Alexander</span>
+        <span class="logo__text">Ke'Shawn Alexander's Personal Website</span>
       </a>
 
       <nav class="nav" aria-label="Primary">
@@ -39,51 +48,32 @@ app.innerHTML = `
 
   <main id="top">
     <section class="hero">
-      <div class="container hero__inner">
-        <div class="hero__left">
-          <div class="eyebrow">Founder • Product Leader • Technologist</div>
-          <h1>Building products and programs that expand opportunity.</h1>
-          <p class="lead">
-            I build mission-driven pipelines through <strong>R.O.S.A</strong> and ship products like
-            <strong>SkySpot</strong>, <strong>The Unveil</strong>, and a <strong>NIL Registry</strong>.
-          </p>
+  <div class="container hero__inner">
+    <div class="hero__left">
 
-          <div class="hero__cta">
-            <a class="btn btn--solid" href="#work">Explore work</a>
-            <a class="btn btn--outline" href="#contact">Let’s connect</a>
-          </div>
+      <h1>Building products and programs that expand opportunity.</h1>
 
-          <div class="metrics">
-            <div class="metric">
-              <div class="metric__k">200+</div>
-              <div class="metric__l">students served (R.O.S.A)</div>
-            </div>
-            <div class="metric">
-              <div class="metric__k">25+</div>
-              <div class="metric__l">SkySpot beta users</div>
-            </div>
-            <div class="metric">
-              <div class="metric__k">0→1</div>
-              <div class="metric__l">shipping mindset</div>
-            </div>
-          </div>
+      <p class="lead">
+        I build mission-driven pipelines through <strong>R.O.S.A</strong> and ship products like <strong>SkySpot</strong>, <strong>The Unveil</strong>, and a <strong>NIL Registry</strong>.
+      </p>
+
+      <div class="metrics">
+        <div class="metric">
+          <div class="metric__k">200+</div>
+          <div class="metric__l">students served (R.O.S.A)</div>
         </div>
-
-        <div class="hero__right">
-          <div class="panel">
-            <div class="panel__top">
-              <span class="pill">Now building</span>
-              <span class="muted">2026</span>
-            </div>
-            <div class="panel__list" id="panelList"></div>
-            <div class="panel__actions">
-              <a class="btn btn--solid btn--sm" href="#work">See details</a>
-              <a class="btn btn--outline btn--sm" href="${LINKEDIN_URL}" target="_blank" rel="noreferrer">LinkedIn</a>
-            </div>
-          </div>
+        <div class="metric">
+          <div class="metric__k">25+</div>
+          <div class="metric__l">SkySpot beta users</div>
+        </div>
+        <div class="metric">
+          <div class="metric__k">0→1</div>
+          <div class="metric__l">shipping mindset</div>
         </div>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
 
     <section class="section" id="work">
       <div class="container">
@@ -198,7 +188,6 @@ app.innerHTML = `
 
         <footer class="footer">
           <span>© <span id="year"></span> Ke'Shawn Alexander</span>
-          <span class="muted">GitHub Pages</span>
         </footer>
       </div>
     </section>
@@ -207,20 +196,7 @@ app.innerHTML = `
 
 document.querySelector("#year").textContent = String(new Date().getFullYear());
 
-// Right-side “Now building” list
-document.querySelector("#panelList").innerHTML = projects
-  .map(
-    (p) => `
-      <div class="panelItem">
-        <div>
-          <div class="panelItem__title">${p.title}</div>
-          <div class="panelItem__sub muted">${p.subtitle}</div>
-        </div>
-        <div class="panelItem__metric">${p.metric}</div>
-      </div>
-    `
-  )
-  .join("");
+
 
 // Work cards
 document.querySelector("#workGrid").innerHTML = projects
@@ -250,6 +226,28 @@ document.querySelector("#workGrid").innerHTML = projects
   .join("");
 
 setupNav({ hamburgerId: "hamburger", mobileNavId: "mobileNav" });
+
+const enter = document.getElementById("enter");
+const site = document.getElementById("site");
+const enterBtn = document.getElementById("enterBtn");
+const skipLink = document.getElementById("skipLink");
+
+function openSite() {
+  enter?.classList.add("enter--hide");
+  site?.classList.remove("site--hidden");
+  document.body.classList.remove("no-scroll");
+  localStorage.setItem("keshawn_entered", "1");
+}
+
+if (localStorage.getItem("keshawn_entered") === "1") {
+  // Returning visitor: skip enter screen
+  enter?.remove();
+  site?.classList.remove("site--hidden");
+} else {
+  document.body.classList.add("no-scroll");
+  enterBtn?.addEventListener("click", openSite);
+  skipLink?.addEventListener("click", openSite);
+}
 
 // Email draft
 document.querySelector("#quickForm").addEventListener("submit", (e) => {
