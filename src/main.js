@@ -195,7 +195,6 @@ app.insertAdjacentHTML(
   `
   <div id="enter" class="enter">
     <div class="enter__card">
-      <div class="enter__mark"></div>
       <div class="enter__name">Ke'Shawn Alexander</div>
       <div class="enter__tag">Founder • Product Leader • Technologist</div>
       <button class="btn btn--solid enter__btn" id="enterBtn" type="button">Enter</button>
